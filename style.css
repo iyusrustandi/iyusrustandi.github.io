@@ -11,21 +11,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
-#header {
-  width: 100%;
-  height: 100vh;
-  background-image: url(Image/background.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.container {
-  padding: 10px 10%;
+.logo {
+  width: 64px;
+  height: 64px;
 }
 nav {
+  background: #00000f;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 5px 10px;
 }
 nav ul li {
   display: inline-block;
@@ -35,44 +31,74 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: bold;
   position: relative;
+  z-index: 1;
 }
 nav ul li a::after {
-  content: '';
-  width: 0;
-  height: 0;
-  background: #ff004f;
+  display: block;
   position: absolute;
+  top: 0;
   left: 0;
-  bottom: -6px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #f30b0b;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
 }
 nav ul li a:hover::after {
-  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
 }
 .topnav a:hover {
-  background-color: #ff004f;
+  color: #fff;
+}
+/* ==============header========================= */
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(Image/background.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 15px 15px;
 }
 .header-text {
-  margin-top: 10%;
+  margin-top: 30%;
   font-size: 30px;
 }
 .header-text H1 {
   font-size: 60px;
   margin-top: 20px;
 }
-.header-text h1 span {
-  color: #ff004f;
+.music {
+  color: #fff;
+  font-weight: bold;
 }
-.header-text p span {
-  color: #ff004f;
+.programming {
+  color: #080809;
+  font-weight: bold;
 }
 .header-text p {
   color: #080809;
 }
-/* about */
+.header-text h1 span {
+  color: #ff004f;
+}
+.rustandi {
+  color: #ff004f;
+}
+
+/* ==============about========================= */
 #about {
-  padding: 80px 0;
+  padding: 80px 10px;
   color: #ababaa;
 }
 .row {
@@ -135,9 +161,9 @@ nav ul li a:hover::after {
   display: block;
 }
 
-/* services */
+/* ==============services========================= */
 #services {
-  padding: 30px 0;
+  padding: 30px 10px;
 }
 .services-list {
   display: grid;
@@ -174,9 +200,9 @@ nav ul li a:hover::after {
   transform: translateY(-10px);
 }
 
-/* portfolio */
+/* ==============portfolio========================= */
 #portfolio {
-  padding: 50px 0;
+  padding: 50px 10px;
 }
 .work-list {
   display: grid;
@@ -250,7 +276,10 @@ nav ul li a:hover::after {
   background: #ff004f;
 }
 
-/* contact */
+/* =============contact======================= */
+#contact {
+  padding: 0 10px;
+}
 .contact-left {
   flex-basis: 35%;
 }
@@ -329,7 +358,7 @@ nav .fas {
     background-image: url(Image/phone-background.jpg);
   }
   .header-text {
-    margin-top: 100%;
+    margin-top: 75%;
     font-size: 16px;
   }
   .header-text h1 {
@@ -340,7 +369,7 @@ nav .fas {
     font-size: 25px;
   }
   nav ul {
-    background: #ff004f;
+    background: #00000f;
     position: fixed;
     top: 0;
     right: -200px;
