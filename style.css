@@ -74,24 +74,19 @@ nav ul li a:hover::after {
   margin-top: 30%;
   font-size: 30px;
 }
-.header-text H1 {
+.header-text h1 {
   font-size: 60px;
   margin-top: 20px;
 }
-.music {
-  color: #fff;
-  font-weight: bold;
-}
+.music,
 .programming {
-  color: #080809;
+  color: #fff;
   font-weight: bold;
 }
 .header-text p {
   color: #080809;
 }
-.header-text h1 span {
-  color: #ff004f;
-}
+.header-text h1 span,
 .rustandi {
   color: #ff004f;
 }
@@ -173,9 +168,10 @@ nav ul li a:hover::after {
 }
 .services-list div {
   background: #262626;
+  color: #fff;
   padding: 40px;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 200;
   border-radius: 10px;
   transition: background 0.5s, transform 0.5s;
 }
@@ -199,6 +195,7 @@ nav ul li a:hover::after {
   background: #800088;
   transform: translateY(-10px);
 }
+
 
 /* ==============portfolio========================= */
 #portfolio {
@@ -225,6 +222,7 @@ nav ul li a:hover::after {
   width: 100%;
   height: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  color: #fff;
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -279,6 +277,12 @@ nav ul li a:hover::after {
 /* =============contact======================= */
 #contact {
   padding: 0 10px;
+  color: #fff;
+}
+.contact-sub-title{
+   font-size: 50px;
+  font-weight: bold;
+  color: #fff;
 }
 .contact-left {
   flex-basis: 35%;
@@ -309,7 +313,7 @@ nav ul li a:hover::after {
   color: #ff004f;
   transform: translateY(-5px);
 }
-.btn.btn2 {
+.submit-button {
   display: inline-block;
   background: #ff004f;
 }
@@ -328,13 +332,17 @@ form textarea {
   font-size: 18px;
   border-radius: 6px;
 }
-form .btn2 {
-  padding: 14px 60px;
+form .submit-button {
+  padding: 14px 50px;
   font-size: 18px;
   margin-top: 20px;
-  cursor: pointer;
+  margin: 50px auto;
+  border: 1px solid #ff004f;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 0.5s;
 }
-.btn.btn2:hover {
+.submit-button:hover {
   background-color: #080809;
 }
 /* .copyright {
@@ -353,16 +361,17 @@ form .btn2 {
 nav .fas {
   display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #header {
     background-image: url(Image/phone-background.jpg);
   }
   .header-text {
-    margin-top: 75%;
-    font-size: 16px;
+    margin-top: 70%;
+    font-size: 24px;
   }
   .header-text h1 {
-    font-size: 30px;
+    font-size: 36px;
+    margin-top: 10px;
   }
   nav .fas {
     display: block;
@@ -406,6 +415,9 @@ nav .fas {
     font-size: 16px;
     margin-right: 20px;
   }
+  .contact-sub-title{
+   font-size: 30px;
+}
   .contact-left,
   .contact-right {
     flex-basis: 100%;
