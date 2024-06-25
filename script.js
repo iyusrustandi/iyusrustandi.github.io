@@ -14,6 +14,39 @@ function handleClick() {
 toggleOpen.addEventListener('click', handleClick);
 toggleClose.addEventListener('click', handleClick);
 
+//Typing animation
+function typeEffect(element, text, delay, callback) {
+  let i = 0;
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, delay);
+    } else if (callback) {
+      setTimeout(callback, delay); // Call the callback function after finishing typing
+    }
+  }
+  typing();
+}
+
+function startTypingEffect() {
+  const firstNameElement = document.getElementById('firstName');
+  const lastNameElement = document.getElementById('lastName');
+
+  firstNameElement.innerHTML = '';
+  lastNameElement.innerHTML = '';
+
+  typeEffect(firstNameElement, 'Iyus', 200, () => {
+    typeEffect(lastNameElement, 'Rustandi', 200, () => {
+      setTimeout(startTypingEffect, 2000); // Restart the typing effect after a delay
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  startTypingEffect();
+});
+
 //about me active tab
 function opentab(tabName) {
   var tabContents = document.getElementsByClassName('tab-contents');
