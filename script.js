@@ -66,6 +66,45 @@ function opentab(tabName) {
   event.currentTarget.classList.add('active-link');
 }
 
+//Dark mode
+if (localStorage.getItem('darkmode') === 'enabled') {
+  document.documentElement.classList.add('dark');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+  function enableDarkMode() {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('darkmode', 'enabled');
+    darkIcon.classList.add('hidden');
+    lightIcon.classList.remove('hidden');
+  }
+
+  function disableDarkMode() {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('darkmode', 'disabled');
+    darkIcon.classList.remove('hidden');
+    lightIcon.classList.add('hidden');
+  }
+
+  if (localStorage.getItem('darkmode') === 'enabled') {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    if (localStorage.getItem('darkmode') !== 'enabled') {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
+  });
+});
+
 //contact form google https://beproblemsolver.com/html-form-to-google-sheet/#google_vignette
 window.addEventListener('load', function () {
   const form = document.getElementById('my-form');
@@ -76,8 +115,13 @@ window.addEventListener('load', function () {
     fetch(action, {
       method: 'POST',
       body: data,
-    }).then(() => {
-      alert('Message sent succesfully');
-    });
+    })
+      .then(() => {
+        alert('Message sent successfully');
+        form.reset();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   });
 });
