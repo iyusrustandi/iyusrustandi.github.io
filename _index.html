@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iyus Rustandi</title>
+    <link href="src/output.css" rel="stylesheet" />
+    <link href="Image/icon.png" rel="icon" />
+    <script src="https://kit.fontawesome.com/98d921e819.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="dark:bg-gray-900 bg-white">
+    <nav class="flex shadow-md py-4 px-4 sm:px-10 bg-white dark:bg-gray-900 font-[sans-serif] min-h-[80px] tracking-wide z-50 sticky top-0">
+      <div class="flex flex-wrap items-center w-full gap-5">
+        <a href="#header" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="Image/logo.png" class="w-auto h-8 rounded-lg hover:scale-105 hover:shadow-xl logo md:h-12 max-lg:mr-5" alt="Logo" />
+          <span class="self-center lg:text-2xl lg:text-1xl font-semibold whitespace-nowrap dark:text-white">Iyus Rustandi</span>
+        </a>
+        <div id="collapseMenu" class="max-lg:hidden lg:!flex lg:ml-auto max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50">
+          <button id="toggleClose" class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white dark:bg-gray-800 p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black dark:fill-white" viewBox="0 0 320.591 320.591">
+              <path
+                d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+              ></path>
+              <path
+                d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+              ></path>
+            </svg>
+          </button>
+          <ul class="lg:flex gap-4 max-lg:space-y-3 max-lg:fixed max-lg:bg-white dark:max-lg:bg-gray-900 max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+            <li class="hidden mb-6 max-lg:block">
+              <a href="#header" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="Image/logo.png" class="w-auto h-8 rounded-lg hover:bg-gray-900 logo md:h-12 max-lg:mr-5" alt="Logo" />
+                <span class="self-center lg:text-2xl lg:text-1xl font-semibold whitespace-nowrap dark:text-white">Iyus Rustandi</span>
+              </a>
+            </li>
+            <li class="px-3 max-lg:border-b max-lg:py-3 border-gray-200 dark:border-gray-700">
+              <a href="#about" class="hover:text-[#007bff] text-[#333] dark:text-white font-semibold block text-[15px]">About</a>
+            </li>
+            <li class="px-3 max-lg:border-b max-lg:py-3 border-gray-200 dark:border-gray-700">
+              <a href="#services" class="hover:text-[#007bff] text-[#333] dark:text-white font-semibold block text-[15px]">Service</a>
+            </li>
+            <li class="px-3 max-lg:border-b max-lg:py-3 border-gray-200 dark:border-gray-700">
+              <a href="#portfolio" class="hover:text-[#007bff] text-[#333] dark:text-white font-semibold block text-[15px]">Portfolio</a>
+            </li>
+            <li class="px-3 max-lg:border-b max-lg:py-3 border-gray-200 dark:border-gray-700">
+              <a href="#contact" class="hover:text-[#007bff] text-[#333] dark:text-white font-semibold block text-[15px]">Contact</a>
+            </li>
+            <li class="px-3 max-lg:border-b max-lg:py-3 border-gray-200 dark:border-gray-700">
+              <button id="theme-toggle" type="button" class="block px-3 rounded-full text-gray-500 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-gray-200 dark:focus:ring-gray-700">
+                <span class="sr-only">Dark Mode</span>
+                <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center space-x-6 max-lg:ml-auto">
+          <button id="toggleOpen" class="lg:hidden">
+            <svg class="w-7 h-7 fill-current text-gray-900 dark:text-white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="header" class="bg-[url('/Image/background.jpg')] bg-cover bg-center bg-no-repeat dark:bg-[url('/Image/background.jpg')]">
+      <div class="relative max-w-screen-xl px-4 py-32 mx-auto sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+        <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+          <h1 class="text-3xl font-extrabold sm:text-5xl">
+            Hi, I'm <span id="firstName"></span>
+            <strong class="block font-extrabold text-rose-700 dark:text-rose-600" id="lastName"></strong>
+          </h1>
+          <p class="max-w-lg mt-4 text-slate-100 dark:text-slate-200 sm:text-xl/relaxed">I'm music player and beginner web developer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- about -->
+    <div id="about" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-slate-900 dark:to-slate-700">
+      <div class="container mx-auto flex flex-wrap justify-center py-5">
+        <div class="flex flex-wrap w-full">
+          <div class="about-col-1 flex-1 p-2 min-w-[300px] flex justify-center items-center">
+            <img src="Image/user.png" alt="User Image" class="max-w-[75%] h-auto rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-500" />
+          </div>
+          <div class="about-col-2 flex-1 p-2 min-w-[300px]">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">About Me</h1>
+            <p class="text-base text-gray-900 dark:text-gray-300 mt-2">My name is Iyus Rustandi, I have some experience with electronic retail, music, and beginner web development.</p>
+            <div class="flex my-5 space-x-5 text-base font-bold text-gray-800 dark:text-gray-300">
+              <p class="inline-block underline cursor-pointer hover:decoration-4 transform hover:scale-105 transition-transform hover:shadow-xl duration-500 tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="inline-block underline cursor-pointer hover:decoration-4 transform hover:scale-105 transition-transform hover:shadow-xl duration-500 tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="inline-block underline cursor-pointer hover:decoration-4 transform hover:scale-105 transition-transform hover:shadow-xl duration-500 tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="block my-5 text-base text-gray-900 dark:text-white tab-contents" id="skills">
+              <ul>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Report</span><br />Create Sales Report</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Music Production</span><br />Recording and Mixing</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Video Editing</span><br />Basic Editing</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Web Development</span><br />Basic Skills</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Mobile Apps Development</span><br />Basic Skills</li>
+              </ul>
+            </div>
+            <div class="hidden my-5 text-base text-gray-900 dark:text-white tab-contents" id="experience">
+              <ul>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Iscalton</span><br />Waitress</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Citra Cikopo Hotel</span><br />Housekeeping</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">PT.Bina Usaha Mandiri Sejahtera</span><br />Cashier, Sales, SPV</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">PT.Courts Retail Indonesia</span><br />Cashier, Sales</li>
+              </ul>
+            </div>
+            <div class="hidden my-5 text-base text-gray-900 dark:text-white tab-contents" id="education">
+              <ul>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">SMK</span><br />SMK Pariwisata Indonesia</li>
+                <li class="my-2 transform hover:scale-105 transition-transform hover:shadow-xl duration-500"><span class="text-rose-700 dark:text-rose-400">Universitas Terbuka</span><br />Sistem Informasi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- services bg-gradient-to-r from-neutral-300 to-stone-400 -->
+    <div id="services" class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 dark:from-slate-900 dark:to-slate-700">
+      <h1 class="text-[3rem] font-bold text-gray-900 dark:text-white py-5 pl-10">My Services</h1>
+
+      <div class="flex flex-wrap justify-center mt-5">
+        <!-- card 1 -->
+        <div class="max-w-sm p-4 duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="flex flex-col h-full p-8 bg-gray-300 rounded-lg dark:bg-gray-800 hover:text-gray-100 dark:text-white hover:bg-gray-600">
+            <div class="flex items-center mb-3">
+              <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 bg-indigo-500 rounded-full dark:bg-indigo-500">
+                <i class="fa-solid fa-guitar"></i>
+              </div>
+              <h2 class="text-lg font-medium">Music Player</h2>
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <p class="text-base leading-relaxed">If you need Guitarist with any music genre start with Rock, Pop and dangdut you can hire me. I have my own rig:</p>
+              <ul class="mt-5 text-base leading-relaxed">
+                <li><i class="mx-2 fa-solid fa-check"></i>Schecter C6 Plus</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>Ibanez Acoustic Guitar</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>NUX MG400</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="max-w-sm p-4 duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="flex flex-col h-full p-8 bg-gray-300 rounded-lg dark:bg-gray-800 hover:text-gray-100 dark:text-white hover:bg-gray-600">
+            <div class="flex items-center mb-3">
+              <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 bg-indigo-500 rounded-full dark:bg-indigo-500">
+                <i class="fa-solid fa-microphone-lines"></i>
+              </div>
+              <h2 class="text-lg font-medium">Music Recording</h2>
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <p class="text-base leading-relaxed">
+                Music recording with home recording setup, or if you need an operator for your recording studio and mixing engineer. I use Presonus Studio One as a DAW, and can operate other DAW with Learn.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="max-w-sm p-4 duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="flex flex-col h-full p-8 bg-gray-300 rounded-lg dark:bg-gray-800 hover:text-gray-100 dark:text-white hover:bg-gray-600">
+            <div class="flex items-center mb-3">
+              <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 bg-indigo-500 rounded-full dark:bg-indigo-500">
+                <i class="fa-solid fa-film"></i>
+              </div>
+              <h2 class="text-lg font-medium">Video Editing</h2>
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <p class="text-base leading-relaxed">Video Editing use Adobe Premiere with basic skills or if you need an operator or video editor for your youtube video with remote or at office.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 4 -->
+        <div class="max-w-sm p-4 duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="flex flex-col h-full p-8 bg-gray-300 rounded-lg dark:bg-gray-800 hover:text-gray-100 dark:text-white hover:bg-gray-600">
+            <div class="flex items-center mb-3">
+              <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 bg-indigo-500 rounded-full dark:bg-indigo-500">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h2 class="text-lg font-medium">Web Development</h2>
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <p class="text-base leading-relaxed">Web Development with Beginner skills HTML, CSS and Javascript, Bootstrap, SQL:</p>
+              <ul class="mt-5 text-base leading-relaxed columns-2">
+                <li><i class="mx-2 fa-solid fa-check"></i>HTML</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>Laravel</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>React JS</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>CSS</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>Bootstrap</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>Tailwind</li>
+                <li><i class="mx-2 fa-solid fa-check"></i>Mysql</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 5 -->
+        <div class="max-w-sm p-4 duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="flex flex-col h-full p-8 bg-gray-300 rounded-lg dark:bg-gray-800 hover:text-gray-100 dark:text-white hover:bg-gray-600">
+            <div class="flex items-center mb-3">
+              <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 bg-indigo-500 rounded-full dark:bg-indigo-500">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h2 class="text-lg font-medium">Mobile Apps Development</h2>
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+              <p class="text-base leading-relaxed">Mobile Apps Development with Beginner skills React Native.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- portfolio -->
+    <div id="portfolio" class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 dark:from-slate-900 dark:to-slate-700">
+      <h1 class="text-[3rem] font-bold text-gray-900 dark:text-white py-5 pl-10">My Work</h1>
+
+      <section class="grid justify-center grid-cols-1 mx-auto mt-10 w-fit lg:grid-cols-3 md:grid-cols-2 justify-items-center gap-y-20 gap-x-14">
+        <!--   work 1 -->
+        <div class="duration-500 bg-white dark:bg-gray-800 shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
+          <a href="https://www.instagram.com/iyusrustandi1/">
+            <img src="Image/work-1.png" alt="work" class="object-cover h-80 w-72 rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+              <div class="flex items-center">
+                <p class="my-3 text-lg font-semibold text-gray-900 dark:text-gray-100 cursor-auto">Music Player</p>
+                <div class="ml-auto">
+                  <a href="https://www.instagram.com/iyusrustandi1/"><i class="fa-solid fa-up-right-from-square text-gray-900 dark:text-gray-100"></i></a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--  work 2 -->
+        <div class="duration-500 bg-white dark:bg-gray-800 shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
+          <a href="https://www.youtube.com/channel/UCsjHLbn5APCBV6TRu-axkMA/featured">
+            <img src="Image/work-2.png" alt="work" class="object-cover h-80 w-72 rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+              <div class="flex items-center">
+                <p class="my-3 text-lg font-semibold text-gray-900 dark:text-gray-100 cursor-auto">Music Recording</p>
+                <div class="ml-auto">
+                  <a href="https://www.youtube.com/channel/UCsjHLbn5APCBV6TRu-axkMA/featured"><i class="fa-solid fa-up-right-from-square text-gray-900 dark:text-gray-100"></i></a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--   work 3 -->
+        <div class="duration-500 bg-white dark:bg-gray-800 shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
+          <a href="https://iyusrustandi.github.io/jaktourband/">
+            <img src="Image/work-3.png" alt="work" class="object-cover h-80 w-72 rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+              <div class="flex items-center">
+                <p class="my-3 text-lg font-semibold text-gray-900 dark:text-gray-100 cursor-auto">Web Development</p>
+                <div class="ml-auto">
+                  <a href="https://iyusrustandi.github.io/jaktourband/"><i class="fa-solid fa-up-right-from-square text-gray-900 dark:text-gray-100"></i></a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--   work 4 -->
+        <div class="duration-500 bg-white dark:bg-gray-800 shadow-md w-72 rounded-xl hover:scale-105 hover:shadow-xl">
+          <a href="https://drive.google.com/drive/folders/1DytRlzBZxBIyNONXJcjRNyTBeZQsWJDE?usp=sharing">
+            <img src="Image/work-4.png" alt="work" class="object-cover h-80 w-72 rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+              <div class="flex items-center">
+                <p class="my-3 text-lg font-semibold text-gray-900 dark:text-gray-100 cursor-auto">Mobile Apps Development</p>
+                <div class="ml-auto">
+                  <a href="https://drive.google.com/drive/folders/1DytRlzBZxBIyNONXJcjRNyTBeZQsWJDE?usp=sharing"><i class="fa-solid fa-up-right-from-square text-gray-900 dark:text-gray-100"></i></a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- contact -->
+    <div id="contact" class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 dark:from-slate-900 dark:to-slate-700">
+      <h1 class="text-[3rem] font-bold text-gray-900 dark:text-white py-5 pl-10">Contact Me</h1>
+
+      <div class="grid items-start max-w-4xl gap-16 p-4 mx-auto sm:grid-cols-2">
+        <div>
+          <div class="mt-12">
+            <ul class="mt-4">
+              <li class="flex items-center">
+                <div class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                  <i class="fa-regular fa-envelope text-gray-900 dark:text-gray-100"></i>
+                </div>
+                <a href="#" class="text-gray-900 dark:text-gray-100 text-sm ml-4 hover:scale-105 hover:shadow-xl duration-250">
+                  <small class="block underline underline-offset-1">Mail</small>
+                  <!-- <strong>iyusrustandi2@gmail.com</strong> -->
+                </a>
+              </li>
+              <li class="flex items-center py-5">
+                <div class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                  <i class="fa-solid fa-phone text-gray-900 dark:text-gray-100"></i>
+                </div>
+                <a href="#" class="text-gray-900 dark:text-gray-100 text-sm ml-4 hover:scale-105 hover:shadow-xl duration-250">
+                  <small class="block underline underline-offset-1">Phone</small>
+                  <strong>085158771917</strong>
+                </a>
+              </li>
+              <!-- <a href="https://docs.google.com/gview?embedded=true&url=https://iyusrustandi.github.io/assets/Resume.pdf"> -->
+                <li class="flex items-center">
+                  <div class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                    <i class="fa-regular fa-file text-gray-900 dark:text-gray-100"></i>
+                  </div>
+                  <!-- <a href="https://docs.google.com/gview?embedded=true&url=https://iyusrustandi.github.io/assets/Resume.pdf" class="text-gray-900 dark:text-gray-100 text-sm ml-4 hover:scale-105 hover:shadow-xl duration-250"> -->
+                    <small class="block underline underline-offset-1">CV</small>
+                    <strong>Curriculum Vitae</strong>
+                  </a>
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="mt-12">
+            <h2 class="text-gray-900 dark:text-gray-100 text-base font-bold">Socials</h2>
+
+            <ul class="flex mt-4 space-x-4">
+              <li class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                <!-- <a href="https://web.facebook.com/iyus.rustandi.7/"> -->
+                  <i class="fa-brands fa-facebook-f text-gray-900 dark:text-gray-100"></i>
+                </a>
+              </li>
+              <li class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                <!-- <a href="https://www.instagram.com/iyusrustandi1/"> -->
+                  <i class="fa-brands fa-instagram text-gray-900 dark:text-gray-100"></i>
+                </a>
+              </li>
+              <li class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                <!-- <a href="https://www.youtube.com/@iyusrustandichannel"> -->
+                  <i class="fa-brands fa-youtube text-gray-900 dark:text-gray-100"></i>
+                </a>
+              </li>
+              <li class="bg-gray-200 dark:bg-gray-700 hover:bg-white dark:hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-xl duration-250">
+                <!-- <a href="https://www.linkedin.com/in/iyus-rustandi-b564866a/"> -->
+                  <i class="fa-brands fa-linkedin text-gray-900 dark:text-gray-100"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <form class="ml-auto space-y-4" method="POST" action="https://script.google.com/macros/s/AKfycbxRKiTTDpa4HNfdTVvLQ2DtQmOF7tzjFhDwdwjdvtCBV9uoh9PzJSZeb4gMg3Io1wYU/exec" id="my-form">
+          <input type="text" placeholder="Name" class="w-full px-4 py-3 text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 rounded-md outline-blue-500 focus:bg-transparent dark:focus:bg-transparent" name="Name" />
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 rounded-md outline-blue-500 focus:bg-transparent dark:focus:bg-transparent" name="Email" />
+          <textarea placeholder="Message" rows="6" class="w-full px-4 pt-3 text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 rounded-md outline-blue-500 focus:bg-transparent dark:focus:bg-transparent" name="Message"></textarea>
+          <button type="submit" class="text-white bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6 font-bold">Send Message</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="py-2 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-900">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Iyus Rustandi. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
